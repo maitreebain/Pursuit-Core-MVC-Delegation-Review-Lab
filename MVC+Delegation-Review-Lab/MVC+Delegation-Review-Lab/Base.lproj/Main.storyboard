@@ -57,7 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ggd-ug-Scg">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Yt7-5b-TAg">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Yt7-5b-TAg">
                             <connections>
                                 <segue destination="b3V-ke-l7P" kind="show" id="DDO-Sh-Uig"/>
                             </connections>
@@ -88,32 +88,49 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-dR-Zgb">
                                 <rect key="frame" x="38" y="304" width="338" height="31"/>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pLb-vC-oS1">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pLb-vC-oS1">
                                 <rect key="frame" x="160" y="414" width="94" height="32"/>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Preview Font Size: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs4-jy-SFH">
-                                <rect key="frame" x="120" y="467" width="175" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview Font Size: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs4-jy-SFH">
+                                <rect key="frame" x="120" y="466" width="175" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-qV-fgr">
+                                <rect key="frame" x="157" y="524" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aWV-Uv-lqK"/>
+                                </constraints>
+                                <state key="normal" title="Font Check"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="d2R-hS-Xaj" firstAttribute="trailing" secondItem="DmK-S9-Pes" secondAttribute="trailing" constant="20" id="8dF-01-k31"/>
                             <constraint firstItem="pLb-vC-oS1" firstAttribute="centerX" secondItem="1Kd-JC-ejM" secondAttribute="centerX" id="9Dm-Mp-M55"/>
                             <constraint firstItem="d2R-hS-Xaj" firstAttribute="trailing" secondItem="Vx4-dR-Zgb" secondAttribute="trailing" constant="40" id="IbM-j0-bnk"/>
+                            <constraint firstItem="QfA-qV-fgr" firstAttribute="leading" secondItem="d2R-hS-Xaj" secondAttribute="leading" constant="157" id="Qd5-S1-27h"/>
                             <constraint firstItem="Vx4-dR-Zgb" firstAttribute="leading" secondItem="d2R-hS-Xaj" secondAttribute="leading" constant="40" id="Sgj-t1-eSr"/>
-                            <constraint firstItem="Gs4-jy-SFH" firstAttribute="top" secondItem="pLb-vC-oS1" secondAttribute="bottom" constant="16" id="eBJ-1Y-hvq"/>
+                            <constraint firstItem="d2R-hS-Xaj" firstAttribute="trailing" secondItem="QfA-qV-fgr" secondAttribute="trailing" constant="157" id="aUw-yy-Rfv"/>
+                            <constraint firstItem="Gs4-jy-SFH" firstAttribute="top" secondItem="pLb-vC-oS1" secondAttribute="bottom" constant="20" id="eBJ-1Y-hvq"/>
                             <constraint firstItem="Vx4-dR-Zgb" firstAttribute="top" secondItem="DmK-S9-Pes" secondAttribute="bottom" constant="100" id="fJL-kn-7Yk"/>
                             <constraint firstItem="DmK-S9-Pes" firstAttribute="leading" secondItem="d2R-hS-Xaj" secondAttribute="leading" constant="20" id="msD-A7-xD0"/>
                             <constraint firstItem="DmK-S9-Pes" firstAttribute="top" secondItem="d2R-hS-Xaj" secondAttribute="top" constant="80" id="omA-Bz-ykx"/>
                             <constraint firstItem="pLb-vC-oS1" firstAttribute="top" secondItem="Vx4-dR-Zgb" secondAttribute="bottom" constant="80" id="qNW-Fd-bi8"/>
                             <constraint firstItem="Gs4-jy-SFH" firstAttribute="leading" secondItem="d2R-hS-Xaj" secondAttribute="leading" constant="120" id="vy6-fG-rdF"/>
+                            <constraint firstItem="QfA-qV-fgr" firstAttribute="top" secondItem="Gs4-jy-SFH" secondAttribute="bottom" constant="34" id="weu-5B-CtO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d2R-hS-Xaj"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="cUY-hD-xck"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fontSize" destination="Gs4-jy-SFH" id="Rjh-DR-7pk"/>
+                        <outlet property="sliderControl" destination="Vx4-dR-Zgb" id="p8P-kR-bUs"/>
+                        <outlet property="stepperControl" destination="pLb-vC-oS1" id="yun-os-F1L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjv-zk-asf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

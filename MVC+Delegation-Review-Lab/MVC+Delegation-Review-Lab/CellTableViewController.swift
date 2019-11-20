@@ -11,9 +11,8 @@ import UIKit
 class CellTableView: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    var movies = [[Movie]]() {
+
+    var movies = [Movie]() {
         didSet {
             tableView.reloadData()
         }
@@ -23,6 +22,7 @@ class CellTableView: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        movies = Movie.allMovies
     }
 
 
@@ -30,11 +30,16 @@ class CellTableView: UIViewController {
 
 extension CellTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies[section].count
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+        
+        let movie = movies[indexPath.row]
+        
+        cell.textLabel?.text = movie.name
+        cell.detailTextLabel?.text = String(movie.year)
         
         return cell
     }
