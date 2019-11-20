@@ -72,5 +72,6 @@ struct Movie {
               posterImageName: "american_sniper_small",
               description: "Navy S.E.A.L. sniper Chris Kyle\"s pinpoint accuracy saves countless lives on the battlefield and turns him into a legend. Back home to his wife and kids after four tours of duty, however, Chris finds that it is the war he can\"t leave behind.")
     ]
+
 }
 
