@@ -25,6 +25,13 @@ class CellTableView: UIViewController {
         movies = Movie.allMovies
     }
 
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        guard let tableViewFont = segue.source as? TableViewFontViewController else {
+            fatalError("can't find segue")
+        }
+        
+        
+    }
 
 }
 

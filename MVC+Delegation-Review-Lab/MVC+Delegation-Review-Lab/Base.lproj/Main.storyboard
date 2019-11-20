@@ -85,11 +85,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-dR-Zgb">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-dR-Zgb">
                                 <rect key="frame" x="38" y="304" width="338" height="31"/>
+                                <connections>
+                                    <action selector="sliderChange:" destination="b3V-ke-l7P" eventType="valueChanged" id="mUW-hW-zXG"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pLb-vC-oS1">
                                 <rect key="frame" x="160" y="414" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperChange:" destination="b3V-ke-l7P" eventType="valueChanged" id="a7u-fR-0Qm"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview Font Size: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs4-jy-SFH">
                                 <rect key="frame" x="120" y="466" width="175" height="24"/>
@@ -103,6 +109,9 @@
                                     <constraint firstAttribute="width" constant="100" id="aWV-Uv-lqK"/>
                                 </constraints>
                                 <state key="normal" title="Font Check"/>
+                                <connections>
+                                    <segue destination="AGq-xG-oSc" kind="unwind" unwindAction="unwindSegueWithSegue:" id="FFh-PC-q6d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -133,6 +142,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjv-zk-asf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="AGq-xG-oSc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1924.6376811594205" y="115.84821428571428"/>
         </scene>
