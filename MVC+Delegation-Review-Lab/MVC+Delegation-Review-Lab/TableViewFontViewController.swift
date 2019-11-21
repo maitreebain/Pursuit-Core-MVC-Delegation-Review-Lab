@@ -14,6 +14,9 @@ class TableViewFontViewController: UIViewController {
     @IBOutlet weak var stepperControl: UIStepper!
     @IBOutlet weak var fontSize: UILabel!
     
+    var movie: Movie?
+    
+    var currentFont: CGFloat!
     
     var fontNum: Double = 12 {
         didSet {
@@ -36,13 +39,13 @@ class TableViewFontViewController: UIViewController {
 
     
     func sliderFontIncrease() {
-        sliderControl.minimumValue = 1.0
+        sliderControl.minimumValue = 12.0
         sliderControl.maximumValue = 50.0
         sliderControl.value = 12.0
     }
     
     func stepperFontIncrease() {
-        stepperControl.minimumValue = 1.0
+        stepperControl.minimumValue = 12.0
         stepperControl.maximumValue = 50.0
         stepperControl.value = 12.0
         stepperControl.stepValue = 1.0
@@ -52,6 +55,7 @@ class TableViewFontViewController: UIViewController {
     @IBAction func sliderChange(_ sender: UISlider) {
         sliderFont = sender.value
         stepperControl.value = Double(sender.value)
+        currentFont = CGFloat(sender.value)
         
     }
     
@@ -59,6 +63,7 @@ class TableViewFontViewController: UIViewController {
     @IBAction func stepperChange(_ sender: UIStepper) {
         fontNum = sender.value
         sliderControl.value = Float(sender.value)
+        currentFont = CGFloat(sender.value)
     }
     
 }

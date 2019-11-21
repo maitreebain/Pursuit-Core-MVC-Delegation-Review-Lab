@@ -12,11 +12,13 @@ class CellTableView: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var movies = [Movie]() {
+    var currentFont: CGFloat = 12 {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class CellTableView: UIViewController {
             fatalError("can't find segue")
         }
         
+        currentFont = tableViewFont.currentFont ?? 12
         
     }
 
@@ -47,6 +50,10 @@ extension CellTableView: UITableViewDataSource {
         
         cell.textLabel?.text = movie.name
         cell.detailTextLabel?.text = String(movie.year)
+
+        cell.textLabel?.font = cell.textLabel!.font.withSize(currentFont)
+        cell.detailTextLabel?.font = cell.textLabel!.font.withSize(currentFont)
+        
         
         return cell
     }
