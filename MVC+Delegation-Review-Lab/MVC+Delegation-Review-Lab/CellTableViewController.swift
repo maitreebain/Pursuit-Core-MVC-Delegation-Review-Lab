@@ -28,14 +28,13 @@ class CellTableViewController: UIViewController {
         
     }
     
-
-@IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        guard let tableViewFont = segue.source as? TableViewFontViewController else {
-            fatalError("can't find segue")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tableFontVC = segue.destination as? TableViewFontViewController else {
+            fatalError("cannot segue")
         }
-        currentFont = tableViewFont.currentFont ?? 12
-    
-    tableViewFont.delegate = self
+        currentFont = tableFontVC.currentFont ?? 12
+        
+        tableFontVC.delegate = self
     }
 
 }
