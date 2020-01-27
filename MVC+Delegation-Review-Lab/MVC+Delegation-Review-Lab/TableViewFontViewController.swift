@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol ChangeFont {
-    
+protocol ChangeFont: AnyObject {
+    func fontSizeChanger(_ fontSize: CGFloat, viewController: TableViewFontViewController)
 }
 
 class TableViewFontViewController: UIViewController {
@@ -20,7 +20,13 @@ class TableViewFontViewController: UIViewController {
     
     var movie: Movie?
     
-    var currentFont: CGFloat!
+    weak var delegate: ChangeFont?
+    
+    var currentFont: CGFloat! {
+        didSet {
+            delegate?.fontSizeChanger(currentFont, viewController: self)
+        }
+    }
     
     var fontNum: Double = 12 {
         didSet {
@@ -60,7 +66,6 @@ class TableViewFontViewController: UIViewController {
         sliderFont = sender.value
         stepperControl.value = Double(sender.value)
         currentFont = CGFloat(sender.value)
-        
     }
     
     

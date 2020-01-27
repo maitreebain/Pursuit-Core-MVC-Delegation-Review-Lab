@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CellTableView: UIViewController {
+class CellTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
     var currentFont: CGFloat = 12 {
         didSet {
             tableView.reloadData()
@@ -25,20 +25,22 @@ class CellTableView: UIViewController {
         
         tableView.dataSource = self
         movies = Movie.allMovies
+        
     }
+    
 
-    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+@IBAction func unwindSegue(segue: UIStoryboardSegue) {
         guard let tableViewFont = segue.source as? TableViewFontViewController else {
             fatalError("can't find segue")
         }
-        
         currentFont = tableViewFont.currentFont ?? 12
-        
+    
+    tableViewFont.delegate = self
     }
 
 }
 
-extension CellTableView: UITableViewDataSource {
+extension CellTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -47,7 +49,6 @@ extension CellTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
         
         let movie = movies[indexPath.row]
-        
         cell.textLabel?.text = movie.name
         cell.detailTextLabel?.text = String(movie.year)
 
@@ -56,5 +57,13 @@ extension CellTableView: UITableViewDataSource {
         
         
         return cell
+    }
+}
+
+//on extension - self.currentFont = fontSize
+extension CellTableViewController: ChangeFont {
+    func fontSizeChanger(_ fontSize: CGFloat, viewController: TableViewFontViewController) {
+        
+        currentFont = fontSize
     }
 }
