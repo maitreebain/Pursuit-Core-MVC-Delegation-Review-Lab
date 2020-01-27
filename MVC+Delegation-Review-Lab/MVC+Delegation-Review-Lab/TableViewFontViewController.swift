@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ChangeFont {
+    
+}
+
 class TableViewFontViewController: UIViewController {
 
     @IBOutlet weak var sliderControl: UISlider!
